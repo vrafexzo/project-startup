@@ -1,0 +1,81 @@
+extends ../layouts/base.pug
+
+block content
+  include ../komponen/navbar.pug
+  
+  .container.py-5
+    .row.justify-content-center
+      .col-lg-8
+        .card.border-0.shadow.rounded-4
+          .card-header.bg-success.text-white.py-3.rounded-top-4
+            h2.text-center.mb-0 #{service.name}
+            p.text-center.mb-0 #{service.description}
+          
+          .card-body.p-4
+            if error
+              .alert.alert-danger #{error}
+            
+            form(action="/order/consultation", method="POST")
+              h4.mb-4 Data Pelanggan
+              
+              .row
+                .col-md-6.mb-3
+                  label.form-label(for="name") Nama Lengkap
+                  input.form-control#name(type="text", name="name", required, value=formData ? formData.name : '')
+                
+                .col-md-6.mb-3
+                  label.form-label(for="email") Email
+                  input.form-control#email(type="email", name="email", required, value=formData ? formData.email : '')
+              
+              .row
+                .col-md-6.mb-3
+                  label.form-label(for="phone") Nomor HP
+                  input.form-control#phone(type="tel", name="phone", required, value=formData ? formData.phone : '')
+              
+              hr.my-4
+              
+              h4.mb-4 Detail Konsultasi
+              
+              .mb-3
+                label.form-label(for="budget") Budget
+                select.form-select#budget(name="budget", required)
+                  option(value="") Pilih rentang budget
+                  option(value="under-5m", selected=formData && formData.budget === 'under-5m') Di bawah 5 juta
+                  option(value="5-10m", selected=formData && formData.budget === '5-10m') 5 - 10 juta
+                  option(value="10-15m", selected=formData && formData.budget === '10-15m') 10 - 15 juta
+                  option(value="15-20m", selected=formData && formData.budget === '15-20m') 15 - 20 juta
+                  option(value="above-20m", selected=formData && formData.budget === 'above-20m') Di atas 20 juta
+              
+              .mb-3
+                label.form-label(for="useCase") Kebutuhan Penggunaan
+                select.form-select#useCase(name="useCase", required)
+                  option(value="") Pilih kebutuhan utama
+                  option(value="gaming", selected=formData && formData.useCase === 'gaming') Gaming
+                  option(value="editing", selected=formData && formData.useCase === 'editing') Editing / Content Creation
+                  option(value="office", selected=formData && formData.useCase === 'office') Office / Produktivitas
+                  option(value="developer", selected=formData && formData.useCase === 'developer') Development / Programming
+                  option(value="stream", selected=formData && formData.useCase === 'stream') Streaming
+                  option(value="other", selected=formData && formData.useCase === 'other') Lainnya
+              
+              .mb-3
+                label.form-label(for="preferences") Preferensi & Detail Kebutuhan
+                textarea.form-control#preferences(name="preferences", rows="5", placeholder="Jelaskan lebih detail kebutuhan dan preferensi Anda (misalnya: game yang akan dimainkan, software editing, dll)") #{formData ? formData.preferences : ''}
+              
+              hr.my-4
+              
+              h4.mb-4 Metode Pembayaran
+              
+              .mb-3
+                .form-check.mb-2
+                  input.form-check-input#payment-transfer(type="radio", name="paymentMethod", value="transfer", checked=!formData || formData.paymentMethod === 'transfer')
+                  label.form-check-label(for="payment-transfer") Transfer Bank
+                
+                .form-check.mb-2
+                  input.form-check-input#payment-ewallet(type="radio", name="paymentMethod", value="ewallet", checked=formData && formData.paymentMethod === 'ewallet')
+                  label.form-check-label(for="payment-ewallet") E-Wallet (OVO, GoPay, DANA)
+              
+              .d-grid.gap-2.mt-4
+                button.btn.btn-success.py-2(type="submit") Lanjutkan ke Pembayaran
+                a.btn.btn-outline-secondary.py-2(href="/") Kembali
+
+  include ../komponen/footer.pug

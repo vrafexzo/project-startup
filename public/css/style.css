@@ -1,0 +1,419 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+}
+
+.container-nav {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.list-item-nav {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.wrap-judul-hero {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.tittle-hero {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.deskripsi-hero {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.container-box-content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.wrap-container-box {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.btn-hero {
+  font-size: 0.875rem;
+}
+
+.wrap-text-content {
+  padding: 3rem 0;
+}
+
+.rekomendasi-section {
+  padding: 3rem 0;
+}
+
+.harga-section {
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+}
+
+/* RESPONSIVE NAVBAR & INDEX.PUG  */
+/* iPad (tablet) - min 600px */
+@media (min-width: 600px) {
+  .container-nav {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .list-item-nav {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .wrap-judul-hero {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .wrap-container-box {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .container-box-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .tittle-hero {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  .deskripsi-hero {
+    font-size: 1.125rem;
+    font-weight: 300;
+  }
+  .btn-hero {
+    font-size: 1rem;
+  }
+}
+
+/* Buat border right none  */
+@media (max-width: 767.98px) {
+  .border-end {
+    border-right: none !important;
+  }
+}
+
+/* Laptop - min 992px */
+@media (min-width: 992px) {
+  .container-nav {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .list-item-nav {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .wrap-judul-hero {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .wrap-container-box {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .tittle-hero {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+  }
+  .deskripsi-hero {
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+  .btn-hero {
+    font-size: 1.125rem;
+  }
+  .wrap-text-content {
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+  }
+  .rekomendasi-section {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+  .harga-section {
+    padding-top: 4rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* Desktop besar - min 1200px*/
+@media (min-width: 1200px) {
+  .container-nav {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  .list-item-nav {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  .wrap-judul-hero {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  .wrap-container-box {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  .tittle-hero {
+    font-size: 4.2rem;
+    font-weight: 700;
+  }
+  .deskripsi-hero {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  .btn-hero {
+    font-size: 1.25rem;
+  }
+  .wrap-text-content {
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+  }
+
+  .rekomendasi-section {
+    padding-top: 5rem;
+    padding-bottom: 9rem;
+  }
+
+  .harga-section {
+    padding-top: 5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* Font Responsive Bawah Hero */
+/* Default (Mobile) */
+.info-stat h2 {
+  font-size: 1.75rem;
+}
+.info-stat h6 {
+  font-size: 1rem;
+}
+.info-stat p {
+  font-size: 0.875rem;
+}
+
+/* Tablet */
+@media (min-width: 576px) {
+  .info-stat h2 {
+    font-size: 2rem;
+  }
+  .info-stat h6 {
+    font-size: 1.125rem;
+  }
+  .info-stat p {
+    font-size: 1rem;
+  }
+}
+
+/* Laptop */
+@media (min-width: 768px) {
+  .info-stat h2 {
+    font-size: 2.25rem;
+  }
+  .info-stat h6 {
+    font-size: 1.25rem;
+  }
+  .info-stat p {
+    font-size: 1.125rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .info-stat h2 {
+    font-size: 2.5rem;
+  }
+  .info-stat h6 {
+    font-size: 1.375rem;
+  }
+  .info-stat p {
+    font-size: 1.25rem;
+  }
+}
+
+/* Font Responsive Rekomendasi Setup PC */
+.rekomendasi-section h2 {
+  font-size: 1.5rem;
+}
+.rekomendasi-section > .text-center > p {
+  font-size: 1rem;
+}
+.rekomendasi-section .card h5 {
+  font-size: 1.125rem;
+}
+.rekomendasi-section .card p {
+  font-size: 0.875rem;
+}
+
+@media (min-width: 576px) {
+  .rekomendasi-section h2 {
+    font-size: 1.75rem;
+  }
+  .rekomendasi-section > .text-center > p {
+    font-size: 1.125rem;
+  }
+  .rekomendasi-section .card h5 {
+    font-size: 1.25rem;
+  }
+  .rekomendasi-section .card p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .rekomendasi-section h2 {
+    font-size: 2rem;
+  }
+  .rekomendasi-section > .text-center > p {
+    font-size: 1.25rem;
+  }
+  .rekomendasi-section .card h5 {
+    font-size: 1.375rem;
+  }
+  .rekomendasi-section .card p {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .rekomendasi-section h2 {
+    font-size: 2.25rem;
+  }
+  .rekomendasi-section > .text-center > p {
+    font-size: 1.375rem;
+  }
+  .rekomendasi-section .card h5 {
+    font-size: 1.5rem;
+  }
+  .rekomendasi-section .card p {
+    font-size: 1.25rem;
+  }
+}
+
+/* Font Responsive  Harga Layanan */
+/* Harga Section Title */
+.harga-section h2 {
+  font-size: 1.75rem;
+}
+
+@media (min-width: 576px) {
+  .harga-section h2 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .harga-section h2 {
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 1200px) {
+  .harga-section h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Rakit PC Cards */
+.rakit-pc-section h4 {
+  font-size: 1.25rem;
+}
+.rakit-pc-section p {
+  font-size: 1rem;
+}
+.rakit-pc-section li {
+  font-size: 0.875rem;
+}
+
+@media (min-width: 576px) {
+  .rakit-pc-section h4 {
+    font-size: 1.375rem;
+  }
+  .rakit-pc-section p {
+    font-size: 1.125rem;
+  }
+  .rakit-pc-section li {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .rakit-pc-section h4 {
+    font-size: 1.5rem;
+  }
+  .rakit-pc-section p {
+    font-size: 1.25rem;
+  }
+  .rakit-pc-section li {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .rakit-pc-section h4 {
+    font-size: 1.625rem;
+  }
+  .rakit-pc-section p {
+    font-size: 1.375rem;
+  }
+  .rakit-pc-section li {
+    font-size: 1.25rem;
+  }
+}
+
+/* Konsultasi PC Card */
+.konsultasi-section h4 {
+  font-size: 1.25rem;
+}
+.konsultasi-section p {
+  font-size: 1rem;
+}
+.konsultasi-section li {
+  font-size: 0.875rem;
+}
+
+@media (min-width: 576px) {
+  .konsultasi-section h4 {
+    font-size: 1.375rem;
+  }
+  .konsultasi-section p {
+    font-size: 1.125rem;
+  }
+  .konsultasi-section li {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .konsultasi-section h4 {
+    font-size: 1.5rem;
+  }
+  .konsultasi-section p {
+    font-size: 1.25rem;
+  }
+  .konsultasi-section li {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .konsultasi-section h4 {
+    font-size: 1.625rem;
+  }
+  .konsultasi-section p {
+    font-size: 1.375rem;
+  }
+  .konsultasi-section li {
+    font-size: 1.25rem;
+  }
+}

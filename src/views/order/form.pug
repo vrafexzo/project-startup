@@ -1,0 +1,78 @@
+extends ../layouts/base.pug
+
+block content
+  include ../komponen/navbar.pug
+  
+  .container.py-5
+    .row.justify-content-center
+      .col-lg-8
+        .card.border-0.shadow.rounded-4
+          .card-header.bg-primary.text-white.py-3.rounded-top-4
+            h2.text-center.mb-0 Form Order Rakit PC
+          
+          .card-body.p-4
+            if error
+              .alert.alert-danger #{error}
+            
+            form(action="/order", method="POST")
+              h4.mb-4 Data Pelanggan
+              
+              .row
+                .col-md-6.mb-3
+                  label.form-label(for="name") Nama Lengkap
+                  input.form-control#name(type="text", name="name", required, value=formData ? formData.name : '')
+                
+                .col-md-6.mb-3
+                  label.form-label(for="email") Email
+                  input.form-control#email(type="email", name="email", required, value=formData ? formData.email : '')
+              
+              .row
+                .col-md-6.mb-3
+                  label.form-label(for="phone") Nomor HP
+                  input.form-control#phone(type="tel", name="phone", required, value=formData ? formData.phone : '')
+                
+                .col-md-6.mb-3
+                  label.form-label(for="address") Alamat
+                  input.form-control#address(type="text", name="address", required, value=formData ? formData.address : '')
+              
+              hr.my-4
+              
+              h4.mb-4 Detail Pesanan
+              
+              .mb-3
+                label.form-label(for="serviceType") Jenis Layanan
+                select.form-select#serviceType(name="serviceType", required)
+                  option(value="basic", selected=formData && formData.serviceType === 'basic') Rakit PC Basic (Rp350.000)
+                  option(value="performance", selected=formData && formData.serviceType === 'performance') Rakit PC Performance (Rp500.000)
+                  option(value="premium", selected=formData && formData.serviceType === 'premium') Rakit PC Premium (Rp750.000)
+              
+              .mb-3
+                label.form-label(for="budget") Budget Komponen (Opsional)
+                input.form-control#budget(type="text", name="budget", placeholder="Rp. ", value=formData ? formData.budget : '')
+              
+              .mb-3
+                label.form-label(for="requirements") Kebutuhan & Spesifikasi
+                textarea.form-control#requirements(name="requirements", rows="5", placeholder="Jelaskan kebutuhan penggunaan PC Anda (gaming, editing, office, dll) dan spesifikasi yang diinginkan") #{formData ? formData.requirements : ''}
+              
+              hr.my-4
+              
+              h4.mb-4 Metode Pembayaran
+              
+              .mb-3
+                .form-check.mb-2
+                  input.form-check-input#payment-transfer(type="radio", name="paymentMethod", value="transfer", checked=!formData || formData.paymentMethod === 'transfer')
+                  label.form-check-label(for="payment-transfer") Transfer Bank
+                
+                .form-check.mb-2
+                  input.form-check-input#payment-ewallet(type="radio", name="paymentMethod", value="ewallet", checked=formData && formData.paymentMethod === 'ewallet')
+                  label.form-check-label(for="payment-ewallet") E-Wallet (OVO, GoPay, DANA)
+                
+                .form-check.mb-2
+                  input.form-check-input#payment-cod(type="radio", name="paymentMethod", value="cod", checked=formData && formData.paymentMethod === 'cod')
+                  label.form-check-label(for="payment-cod") Cash on Delivery (COD)
+              
+              .d-grid.gap-2.mt-4
+                button.btn.btn-primary.py-2(type="submit") Lanjutkan ke Pembayaran
+                a.btn.btn-outline-secondary.py-2(href="/") Kembali
+
+  include ../komponen/footer.pug

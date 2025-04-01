@@ -1,0 +1,125 @@
+extends ../layouts/base.pug
+
+block content
+  include ../komponen/navbar.pug
+
+  // Hero Section
+  section#hero.position-relative.d-flex.align-items-center.justify-content-center.text-center(style="height: 75vh; background: url('/images/hero-setup.jpg') center/cover no-repeat;")
+    .overlay.position-absolute.top-0.start-0.w-100.h-100(style="background: rgba(103,58,183,0.7);")
+    .container.position-relative.text-white.wrap-judul-hero.m-0
+      h1.display-2.tittle-hero Rakit PC Tanpa Ribet, Performa Maksimal
+      p.deskripsi-hero.mt-2 Solusi rakit & konsultasi PC custom — presisi, cepat, dan terpercaya.
+      a.btn.btn-lg.mt-2.btn-hero(href="#harga" style="background-color: #ab47bc; color: white;") Mulai Sekarang
+
+  // Main Content Wrapper
+  .container-box-content(style="margin-top: -60px; z-index: 2; position: relative;")
+    .container-fluid.bg-white.shadow-lg.rounded-4.wrap-container-box
+      // Info Highlights Section
+      .row.text-center.wrap-text-content
+        .col-md-4.mb-4.mb-md-0.border-end.info-stat
+          h2.fw-bold.mb-2 100+
+          h6.text-muted.mb-1 PC Dirakit
+          p.text-muted Dipercaya merakit ratusan PC custom — mulai dari kebutuhan gaming, editing, hingga workstation profesional.
+
+        .col-md-4.mb-4.mb-md-0.border-end.info-stat
+          h2.fw-bold.mb-2 15+
+          h6.text-muted.mb-1 Tahun Pengalaman
+          p.text-muted Tim ahli berpengalaman yang siap membantu Anda memilih dan merakit PC terbaik, sesuai kebutuhan dan anggaran.
+
+        .col-md-4.info-stat
+          h2.fw-bold.mb-2 2
+          h6.text-muted.mb-1 Layanan Utama
+          p.text-muted Rakit PC custom & konsultasi rakit untuk Anda yang ingin performa maksimal dan solusi efisien.
+
+      // Rekomendasi Section
+      section#rekomendasi.rekomendasi-section
+        .text-center.mb-4
+          h2.fw-bold.mb-3 Rekomendasi Setup PC
+          p.text-muted Temukan jenis setup PC yang cocok sesuai kebutuhan dan penggunaan Anda.
+        .row.g-4
+          .col-md-3.col-sm-6
+            .card.border-2.border-light-subtle.p-4.rounded-4.text-center
+              .material-icons-outlined.text-primary.mb-3(style="font-size: 3rem;") sports_esports
+              h5.fw-semibold.mb-1 Gaming
+              p.text-muted.mb-0 Performa tinggi untuk game AAA.
+          .col-md-3.col-sm-6
+            .card.border-2.border-light-subtle.p-4.rounded-4.text-center
+              .material-icons-outlined.text-primary.mb-3(style="font-size: 3rem;") brush
+              h5.fw-semibold.mb-1 Editing
+              p.text-muted.mb-0 Optimal untuk rendering dan desain.
+          .col-md-3.col-sm-6
+            .card.border-2.border-light-subtle.p-4.rounded-4.text-center
+              .material-icons-outlined.text-primary.mb-3(style="font-size: 3rem;") work_outline
+              h5.fw-semibold.mb-1 Office
+              p.text-muted.mb-0 Hemat dan efisien untuk kerja ringan.
+          .col-md-3.col-sm-6
+            .card.border-2.border-light-subtle.p-4.rounded-4.text-center
+              .material-icons-outlined.text-primary.mb-3(style="font-size: 3rem;") savings
+              h5.fw-semibold.mb-1 Budget
+              p.text-muted.mb-0 Solusi rakit murah tapi bertenaga.
+
+      // Harga Section
+      section#harga.bg-white.harga-section
+        .text-center
+          h2.fw-bold.mb-5 Harga Layanan
+
+        .row.g-4.justify-content-center
+
+          // Rakit PC Basic
+          .col-md-4.d-flex.rakit-pc-section
+            .card.border-0.shadow.rounded-4.w-100.d-flex.flex-column.justify-content-between(style="min-height: 450px;")
+              .card-body.p-4
+                h4.text-primary.fw-bold Rakit PC Basic
+                p.text-muted.mb-3 Rp350.000
+                ul.list-unstyled.mb-4
+                  li.mb-2 ✅ Rakit untuk kebutuhan ringan (Office / Budget)
+                  li.mb-2 ✅ Pemilihan komponen sesuai anggaran
+                  li.mb-2 ✅ Perakitan standar & pengecekan fungsi dasar
+                  li.mb-2 ✅ Garansi teknis 7 hari
+              .card-footer.bg-transparent.border-0.text-center.mb-4
+                a.btn.btn-outline-primary.rounded-pill(href="/order/form") Order Now
+
+          // Rakit PC Performance
+          .col-md-4.d-flex.rakit-pc-section
+            .card.border-0.shadow.rounded-4.w-100.d-flex.flex-column.justify-content-between(style="min-height: 450px;")
+              .card-body.p-4
+                h4.text-primary.fw-bold Rakit PC Performance
+                p.text-muted.mb-3 Rp500.000
+                ul.list-unstyled.mb-4
+                  li.mb-2 ✅ Rakit untuk gaming / editing menengah
+                  li.mb-2 ✅ Optimalisasi performa dan airflow
+                  li.mb-2 ✅ Pemasangan rapi & manajemen kabel
+                  li.mb-2 ✅ Garansi teknis 14 hari + dukungan teknis
+              .card-footer.bg-transparent.border-0.text-center.mb-4
+                a.btn.btn-outline-primary.rounded-pill(href="/order/form") Order Now
+
+          // Rakit PC Premium
+          .col-md-4.d-flex.rakit-pc-section
+            .card.border-0.shadow.rounded-4.w-100.d-flex.flex-column.justify-content-between(style="min-height: 450px;")
+              .card-body.p-4
+                h4.text-primary.fw-bold Rakit PC Premium
+                p.text-muted.mb-3 Rp750.000
+                ul.list-unstyled.mb-4
+                  li.mb-2 ✅ Rakit untuk high-end gaming / profesional
+                  li.mb-2 ✅ Konsultasi custom spesifik & airflow optimal
+                  li.mb-2 ✅ Cable management estetik & test benchmark
+                  li.mb-2 ✅ Garansi teknis 30 hari + after-sales support
+              .card-footer.bg-transparent.border-0.text-center.mb-4
+                a.btn.btn-outline-primary.rounded-pill(href="/order/form") Order Now
+
+          // Konsultasi PC
+          .col-md-4.d-flex.konsultasi-section
+            .card.border-0.shadow.rounded-4.w-100.d-flex.flex-column.justify-content-between(style="min-height: 450px;")
+              .card-body.p-4
+                h4.text-success.fw-bold Konsultasi PC
+                p.text-muted.mb-3 Rp150.000
+                ul.list-unstyled.mb-4
+                  li.mb-2 ✅ Konsultasi kebutuhan penggunaan
+                  li.mb-2 ✅ Diskusi spesifikasi dan anggaran
+                  li.mb-2 ✅ Rekomendasi komponen
+                  li.mb-2 ✅ Tanya jawab langsung via chat/call
+              .card-footer.bg-transparent.border-0.text-center.mb-4
+                a.btn.btn-outline-success.rounded-pill(href="#konsultasi") Konsultasi Sekarang
+
+
+  include ../komponen/footer.pug
