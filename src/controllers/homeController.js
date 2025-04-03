@@ -3,7 +3,7 @@
 /**
  * Render the homepage
  */
-exports.getHomepage = (req, res) => {
+export const getHomepage = (req, res) => {
     // You can fetch service data from database in the future
     const services = {
       rakitPC: [
@@ -66,7 +66,7 @@ exports.getHomepage = (req, res) => {
   /**
    * Render the about page
    */
-  exports.getAbout = (req, res) => {
+  export const getAbout = (req, res) => {
     res.render('home/about', {
       title: 'About Us | PC Builder Service'
     });
@@ -75,7 +75,7 @@ exports.getHomepage = (req, res) => {
   /**
    * Render the contact page
    */
-  exports.getContact = (req, res) => {
+  export const getContact = (req, res) => {
     res.render('home/contact', {
       title: 'Contact Us | PC Builder Service'
     });

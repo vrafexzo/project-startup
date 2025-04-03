@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -38,4 +38,16 @@ router.get('/success', (req, res) => {
   });
 });
 
-module.exports = router;
+
+import {
+  getOrders,
+  getOrderById,
+  createOrder,
+} from "../controllers/orderController.js";
+
+
+router.get("/", getOrders);
+router.get("/:orderId", getOrderById);
+router.post("/create", createOrder);
+
+export default router;
