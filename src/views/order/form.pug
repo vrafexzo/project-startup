@@ -14,7 +14,7 @@ block content
             if error
               .alert.alert-danger #{error}
             
-            form(action="/order", method="POST")
+            form(action="/order/form", method="POST")
               h4.mb-4 Data Pelanggan
               
               .row
@@ -28,8 +28,8 @@ block content
               
               .row
                 .col-md-6.mb-3
-                  label.form-label(for="phone") Nomor HP
-                  input.form-control#phone(type="tel", name="phone", required, value=formData ? formData.phone : '')
+                  label.form-label(for="noHP") Nomor HP
+                  input.form-control#noHP(type="tel", name="noHP", required, value=formData ? formData.noHP : '')
                 
                 .col-md-6.mb-3
                   label.form-label(for="address") Alamat
@@ -41,18 +41,16 @@ block content
               
               .mb-3
                 label.form-label(for="serviceType") Jenis Layanan
-                select.form-select#serviceType(name="serviceType", required)
-                  option(value="basic", selected=formData && formData.serviceType === 'basic') Rakit PC Basic (Rp350.000)
-                  option(value="performance", selected=formData && formData.serviceType === 'performance') Rakit PC Performance (Rp500.000)
-                  option(value="premium", selected=formData && formData.serviceType === 'premium') Rakit PC Premium (Rp750.000)
-              
+                select.form-select#serviceType(name="serviceId", required)
+                  each service in serviceList
+                    option(value=service.id) #{service.name} (Rp.#{service.price})
               .mb-3
                 label.form-label(for="budget") Budget Komponen (Opsional)
                 input.form-control#budget(type="text", name="budget", placeholder="Rp. ", value=formData ? formData.budget : '')
               
               .mb-3
-                label.form-label(for="requirements") Kebutuhan & Spesifikasi
-                textarea.form-control#requirements(name="requirements", rows="5", placeholder="Jelaskan kebutuhan penggunaan PC Anda (gaming, editing, office, dll) dan spesifikasi yang diinginkan") #{formData ? formData.requirements : ''}
+                label.form-label(for="details") Kebutuhan & Spesifikasi
+                textarea.form-control#details(name="details", rows="5", placeholder="Jelaskan kebutuhan penggunaan PC Anda (gaming, editing, office, dll) dan spesifikasi yang diinginkan") #{formData ? formData.details : ''}
               
               hr.my-4
               
@@ -60,16 +58,16 @@ block content
               
               .mb-3
                 .form-check.mb-2
-                  input.form-check-input#payment-transfer(type="radio", name="paymentMethod", value="transfer", checked=!formData || formData.paymentMethod === 'transfer')
+                  input.form-check-input#payment-transfer(type="radio", name="paymentMethod", value="TransferBank", checked=!formData || formData.paymentMethod === 'TransferBank')
                   label.form-check-label(for="payment-transfer") Transfer Bank
                 
                 .form-check.mb-2
-                  input.form-check-input#payment-ewallet(type="radio", name="paymentMethod", value="ewallet", checked=formData && formData.paymentMethod === 'ewallet')
-                  label.form-check-label(for="payment-ewallet") E-Wallet (OVO, GoPay, DANA)
+                  input.form-check-input#payment-EWallet(type="radio", name="paymentMethod", value="EWallet", checked=formData && formData.paymentMethod === 'EWallet')
+                  label.form-check-label(for="payment-EWallet") E-Wallet (OVO, GoPay, DANA)
                 
                 .form-check.mb-2
-                  input.form-check-input#payment-cod(type="radio", name="paymentMethod", value="cod", checked=formData && formData.paymentMethod === 'cod')
-                  label.form-check-label(for="payment-cod") Cash on Delivery (COD)
+                  input.form-check-input#payment-COD(type="radio", name="paymentMethod", value="COD", checked=formData && formData.paymentMethod === 'COD')
+                  label.form-check-label(for="payment-COD") Cash on Delivery (COD)
               
               .d-grid.gap-2.mt-4
                 button.btn.btn-primary.py-2(type="submit") Lanjutkan ke Pembayaran

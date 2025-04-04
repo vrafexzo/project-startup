@@ -2,7 +2,7 @@ extends ../layouts/base.pug
 
 block content
   include ../komponen/navbar.pug
-  
+
   .container.py-5.text-center
     .row.justify-content-center
       .col-lg-8
@@ -10,22 +10,19 @@ block content
           .card-body.p-5
             .text-success.mb-4
               i.material-icons-outlined(style="font-size: 5rem;") check_circle
-            
+
             h2.fw-bold.mb-3 Pesanan Berhasil!
-            
+
             p.lead.mb-4 Terima kasih atas pesanan Anda. Kami akan segera memproses permintaan Anda.
-            
+
             .alert.alert-info.mb-4
               p.mb-0 ID Pesanan: 
                 strong #{order.orderId}
               p.mb-0 Tanggal: 
-                strong #{new Date(order.timestamp).toLocaleString('id-ID')}
+                strong #{new Date(order.createdAt).toLocaleString('id-ID')}
               p.mb-0 Layanan: 
-                strong #{order.serviceType}
-            
-            p.mb-4 Detail pesanan telah dikirim ke email 
-              strong #{order.email}
-            
+                strong #{order.service.name}
+
             .d-grid.gap-2.col-md-6.mx-auto
               a.btn.btn-primary.py-2(href="/") Kembali ke Beranda
               a.btn.btn-outline-secondary.py-2(href="/contact") Hubungi Kami
